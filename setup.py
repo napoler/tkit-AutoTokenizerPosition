@@ -29,7 +29,7 @@ def read_requirements(filename):
 long_description=read_file("README.md")
 setup(
     name='tkitAutoTokenizerPosition', #修改包名字-
-    version='0.0.0.2                                 ',
+    version='0.0.0.1',
     description='Terry toolkit tkitAutoTokenizerPosition',
     author='Terry Chan',
     author_email='napoler2008@gmail.com',

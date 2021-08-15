@@ -17,8 +17,8 @@ sys.path.insert(0, os.path.abspath('./../../'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Demo'
-copyright = '2020, Terry Chan'
+project = 'tkitAutoTokenizerPosition'
+copyright = '2021, Terry Chan'
 author = 'Terry Chan'
 
 # The full version, including alpha/beta/rc tags
