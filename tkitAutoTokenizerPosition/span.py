@@ -78,17 +78,18 @@ class autoSpan:
         Returns:
             [type]: [description]
         """
-        texts=[]
-        for i,it in tqdm(enumerate(datas)):
-        #     print(it)
-            try:
-                out=self.bulidSpanMatrix(it['tag'],self.labelsList,maxLen=maxLen)
-                if i==0:
+    texts=[]
+    for i,it in tqdm(enumerate(datas)):
+    #     print(it)
+        try:
+            out=self.bulidSpanMatrix(it['tag'],self.labelsList,maxLen=maxLen)
+            if i==0:
 
-                    myDatas=[out]
-                else:
-                    myDatas.append(out) 
-                texts.append(it['wordList'])
-            except:
+                myDatas=[out]
+            else:
+                myDatas.append(out) 
+            texts.append(it['wordList'])
+        except:
+            pass
         return  texts,myDatas
     
