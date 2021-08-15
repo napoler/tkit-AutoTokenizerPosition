@@ -18,6 +18,8 @@ pip install sphinx-autobuild
 #recommonmark的PyPi说明：https://pypi.org/project/sphinx-markdown-tables/
 pip install recommonmark
 
+
+rm -rf ../docs 
 #
 #清理之前生成的文档
 rm -rf ./source/res/
