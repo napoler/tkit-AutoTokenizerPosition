@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tkitAutoTokenizerPosition.bio &#8212; tkitDemo 0.0.0.2  文档</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">tkitDemo 0.0.0.2  文档</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../res/modules.html">
+   tkitAutoTokenizerPosition
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../res/tkitAutoTokenizerPosition.html">
+     tkitAutoTokenizerPosition package
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <h1>tkitAutoTokenizerPosition.bio 源代码</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">构建BIO结构数据集</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="autoBIO"><a class="viewcode-back" href="../../res/tkitAutoTokenizerPosition.html#tkitAutoTokenizerPosition.bio.autoBIO">[文档]</a><span class="k">class</span> <span class="nc">autoBIO</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;[summary]</span>
+<span class="sd">    </span>
+<span class="sd">    用于构建bio结构数据集</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        
+        
+        
+        <span class="k">pass</span>
+<div class="viewcode-block" id="autoBIO.bulid"><a class="viewcode-back" href="../../res/tkitAutoTokenizerPosition.html#tkitAutoTokenizerPosition.bio.autoBIO.bulid">[文档]</a>    <span class="k">def</span> <span class="nf">bulid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">it</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;[summary]</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        it={&#39;text&#39;: &#39;急性胰腺炎@有研究显示，进行早期 ERCP （24 小时内）可以降低梗阻性胆总管结石患者的并发症发生率和死亡率； 但是，对于无胆总管梗阻的胆汁性急性胰腺炎患者，不需要进行早期 ERCP。&#39;, &#39;wordList&#39;: [&#39;急&#39;, &#39;性&#39;, &#39;胰&#39;, &#39;腺&#39;, &#39;炎&#39;, &#39;@&#39;, &#39;有&#39;, &#39;研&#39;, &#39;究&#39;, &#39;显&#39;, &#39;示&#39;, &#39;，&#39;, &#39;进&#39;, &#39;行&#39;, &#39;早&#39;, &#39;期&#39;, &#39;[PAD]&#39;, &#39;er&#39;, &#39;##cp&#39;, &#39;[PAD]&#39;, &#39;（&#39;, &#39;24&#39;, &#39;[PAD]&#39;, &#39;小&#39;, &#39;时&#39;, &#39;内&#39;, &#39;）&#39;, &#39;可&#39;, &#39;以&#39;, &#39;降&#39;, &#39;低&#39;, &#39;梗&#39;, &#39;阻&#39;, &#39;性&#39;, &#39;胆&#39;, &#39;总&#39;, &#39;管&#39;, &#39;结&#39;, &#39;石&#39;, &#39;患&#39;, &#39;者&#39;, &#39;的&#39;, &#39;并&#39;, &#39;发&#39;, &#39;症&#39;, &#39;发&#39;, &#39;生&#39;, &#39;率&#39;, &#39;和&#39;, &#39;死&#39;, &#39;亡&#39;, &#39;率&#39;, &#39;；&#39;, &#39;[PAD]&#39;, &#39;但&#39;, &#39;是&#39;, &#39;，&#39;, &#39;对&#39;, &#39;于&#39;, &#39;无&#39;, &#39;胆&#39;, &#39;总&#39;, &#39;管&#39;, &#39;梗&#39;, &#39;阻&#39;, &#39;的&#39;, &#39;胆&#39;, &#39;汁&#39;, &#39;性&#39;, &#39;急&#39;, &#39;性&#39;, &#39;胰&#39;, &#39;腺&#39;, &#39;炎&#39;, &#39;患&#39;, &#39;者&#39;, &#39;，&#39;, &#39;不&#39;, &#39;需&#39;, &#39;要&#39;, &#39;进&#39;, &#39;行&#39;, &#39;早&#39;, &#39;期&#39;, &#39;[PAD]&#39;, &#39;er&#39;, &#39;##cp&#39;, &#39;。&#39;], &#39;tag&#39;: [{&#39;start&#39;: 0, &#39;end&#39;: 5, &#39;type&#39;: &#39;疾病&#39;}, {&#39;start&#39;: 69, &#39;end&#39;: 74, &#39;type&#39;: &#39;疾病&#39;}, {&#39;start&#39;: 17, &#39;end&#39;: 19, &#39;type&#39;: &#39;检查&#39;}, {&#39;start&#39;: 85, &#39;end&#39;: 87, &#39;type&#39;: &#39;检查&#39;},</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        返回格式如下</span>
+<span class="sd">        </span>
+<span class="sd">        {&#39;text&#39;: &#39;急性胰腺炎@有研究显示，进行早期 ERCP （24 小时内）可以降低梗阻性胆总管结石患者的并发症发生率和死亡率； 但是，对于无胆总管梗阻的胆汁性急性胰腺炎患者，不需要进行早期 ERCP。&#39;, &#39;wordList&#39;: [&#39;急&#39;, &#39;性&#39;, &#39;胰&#39;, &#39;腺&#39;, &#39;炎&#39;, &#39;@&#39;, &#39;有&#39;, &#39;研&#39;, &#39;究&#39;, &#39;显&#39;, &#39;示&#39;, &#39;，&#39;, &#39;进&#39;, &#39;行&#39;, &#39;早&#39;, &#39;期&#39;, &#39;[PAD]&#39;, &#39;er&#39;, &#39;##cp&#39;, &#39;[PAD]&#39;, &#39;（&#39;, &#39;24&#39;, &#39;[PAD]&#39;, &#39;小&#39;, &#39;时&#39;, &#39;内&#39;, &#39;）&#39;, &#39;可&#39;, &#39;以&#39;, &#39;降&#39;, &#39;低&#39;, &#39;梗&#39;, &#39;阻&#39;, &#39;性&#39;, &#39;胆&#39;, &#39;总&#39;, &#39;管&#39;, &#39;结&#39;, &#39;石&#39;, &#39;患&#39;, &#39;者&#39;, &#39;的&#39;, &#39;并&#39;, &#39;发&#39;, &#39;症&#39;, &#39;发&#39;, &#39;生&#39;, &#39;率&#39;, &#39;和&#39;, &#39;死&#39;, &#39;亡&#39;, &#39;率&#39;, &#39;；&#39;, &#39;[PAD]&#39;, &#39;但&#39;, &#39;是&#39;, &#39;，&#39;, &#39;对&#39;, &#39;于&#39;, &#39;无&#39;, &#39;胆&#39;, &#39;总&#39;, &#39;管&#39;, &#39;梗&#39;, &#39;阻&#39;, &#39;的&#39;, &#39;胆&#39;, &#39;汁&#39;, &#39;性&#39;, &#39;急&#39;, &#39;性&#39;, &#39;胰&#39;, &#39;腺&#39;, &#39;炎&#39;, &#39;患&#39;, &#39;者&#39;, &#39;，&#39;, &#39;不&#39;, &#39;需&#39;, &#39;要&#39;, &#39;进&#39;, &#39;行&#39;, &#39;早&#39;, &#39;期&#39;, &#39;[PAD]&#39;, &#39;er&#39;, &#39;##cp&#39;, &#39;。&#39;], &#39;tag&#39;: [{&#39;start&#39;: 0, &#39;end&#39;: 5, &#39;type&#39;: &#39;疾病&#39;}, {&#39;start&#39;: 69, &#39;end&#39;: 74, &#39;type&#39;: &#39;疾病&#39;}, {&#39;start&#39;: 17, &#39;end&#39;: 19, &#39;type&#39;: &#39;检查&#39;}, {&#39;start&#39;: 85, &#39;end&#39;: 87, &#39;type&#39;: &#39;检查&#39;}], &#39;data&#39;: {&#39;text&#39;: &#39;急性胰腺炎@有研究显示，进行早期 ERCP （24 小时内）可以降低梗阻性胆总管结石患者的并发症发生率和死亡率； 但是，对于无胆总管梗阻的胆汁性急性胰腺炎患者，不需要进行早期 ERCP。&#39;, &#39;spo_list&#39;: [{&#39;Combined&#39;: False, &#39;predicate&#39;: &#39;影像学检查&#39;, &#39;subject&#39;: &#39;急性胰腺炎&#39;, &#39;subject_type&#39;: &#39;疾病&#39;, &#39;object&#39;: {&#39;@value&#39;: &#39;ERCP&#39;}, &#39;object_type&#39;: {&#39;@value&#39;: &#39;检查&#39;}}]}, &#39;tagList&#39;: [&#39;B-疾病&#39;, &#39;M-疾病&#39;, &#39;M-疾病&#39;, &#39;M-疾病&#39;, &#39;E-疾病&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;B-检查&#39;, &#39;E-检查&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;B-疾病&#39;, &#39;M-疾病&#39;, &#39;M-疾病&#39;, &#39;M-疾病&#39;, &#39;E-疾病&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;B-检查&#39;, &#39;E-检查&#39;, &#39;O&#39;]}</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># print(it)</span>
+        <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;O&quot;</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">it</span><span class="p">[</span><span class="s2">&quot;wordList&quot;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">w</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">it</span><span class="p">[</span><span class="s2">&quot;wordList&quot;</span><span class="p">],</span><span class="n">tags</span><span class="p">):</span>
+            <span class="c1"># print(w,t)</span>
+            
+            <span class="k">for</span> <span class="n">tse</span> <span class="ow">in</span> <span class="n">it</span><span class="p">[</span><span class="s1">&#39;tag&#39;</span><span class="p">]:</span>
+                <span class="c1"># print(tse)</span>
+                
+                <span class="k">for</span> <span class="n">rid</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">],</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]):</span>
+                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">it</span><span class="p">[</span><span class="s2">&quot;wordList&quot;</span><span class="p">])</span><span class="o">&gt;</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">it</span><span class="p">[</span><span class="s2">&quot;wordList&quot;</span><span class="p">])</span><span class="o">&gt;</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]:</span>
+                        <span class="k">if</span> <span class="n">rid</span><span class="o">==</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]:</span>
+                            <span class="n">tags</span><span class="p">[</span><span class="n">rid</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;B-&quot;</span><span class="o">+</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
+                        <span class="k">elif</span> <span class="n">rid</span> <span class="o">==</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                            <span class="k">try</span><span class="p">:</span>
+                                <span class="n">tags</span><span class="p">[</span><span class="n">rid</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;E-&quot;</span><span class="o">+</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
+                            <span class="k">except</span><span class="p">:</span>
+                                <span class="c1"># print(len(tags),tse[&#39;start&#39;],tse[&#39;end&#39;])</span>
+                                <span class="k">pass</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">tags</span><span class="p">[</span><span class="n">rid</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;M-&quot;</span><span class="o">+</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
+            
+            
+            <span class="c1"># for w,tag in zip(it[&quot;wordList&quot;],tags):</span>
+            <span class="c1">#     print(w,tag)</span>
+            
+            <span class="n">it</span><span class="p">[</span><span class="s1">&#39;tagList&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">tags</span>
+            
+            <span class="k">return</span> <span class="n">it</span></div></div>
+</pre></div>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Terry Chan<br/>
+        
+            &copy; Copyright 2021, Terry Chan.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
