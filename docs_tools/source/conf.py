@@ -72,10 +72,10 @@ extensions = [
 #
 #html_theme = 'alabaster'
 
-#html_theme = "sphinx_rtd_theme"
+html_theme = "sphinx_rtd_theme"
 #html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
-html_theme = "sphinx_book_theme"
+# html_theme = "sphinx_book_theme"
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
