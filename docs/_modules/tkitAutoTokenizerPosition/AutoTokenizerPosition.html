@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tkitAutoTokenizerPosition.AutoTokenizerPosition &mdash; tkitAutoTokenizerPosition 0.0.0.1  文档</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> tkitAutoTokenizerPosition
+          </a>
+              <div class="version">
+                0.0.0.1 
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div>
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Main">
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../res/modules.html">tkitAutoTokenizerPosition</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" aria-label="Top" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">tkitAutoTokenizerPosition</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+<div role="navigation" aria-label="Breadcrumbs">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">模块代码</a> &raquo;</li>
+      <li>tkitAutoTokenizerPosition.AutoTokenizerPosition</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>tkitAutoTokenizerPosition.AutoTokenizerPosition 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<div class="viewcode-block" id="AutoTokenizerPosition"><a class="viewcode-back" href="../../res/tkitAutoTokenizerPosition.html#tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition">[文档]</a><span class="k">class</span> <span class="nc">AutoTokenizerPosition</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    用来处理只有关键词的ner数据</span>
+<span class="sd">    </span>
+<span class="sd">    起始位置</span>
+<span class="sd">    tokenizer = BertTokenizer.from_pretrained(&quot;clue/albert_chinese_tiny&quot;)</span>
+<span class="sd">    tokenizer = BertTokenizer.from_pretrained(&quot;bert-base-chinese&quot;)</span>
+<span class="sd">    使用这个可以减少不必要的麻烦</span>
+<span class="sd">    ## 安装</span>
+
+<span class="sd">    ```</span>
+
+<span class="sd">    &gt; pip install tkitAutoTokenizerPosition</span>
+<span class="sd">    </span>
+<span class="sd">    # or</span>
+<span class="sd">    </span>
+<span class="sd">    &gt; pip install git+https://github.com/napoler/tkit-AutoTokenizerPosition</span>
+
+<span class="sd">    ```</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tokenizer</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span>
+        <span class="k">pass</span>
+<div class="viewcode-block" id="AutoTokenizerPosition.getWordList"><a class="viewcode-back" href="../../res/tkitAutoTokenizerPosition.html#tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition.getWordList">[文档]</a>    <span class="k">def</span> <span class="nf">getWordList</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">text</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;分词列表&quot;&quot;&quot;</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">pad_token</span><span class="p">)</span>
+        <span class="c1"># print(text)</span>
+<span class="c1">#         word=word.lower()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span></div>
+<div class="viewcode-block" id="AutoTokenizerPosition.autoLen"><a class="viewcode-back" href="../../res/tkitAutoTokenizerPosition.html#tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition.autoLen">[文档]</a>    <span class="k">def</span> <span class="nf">autoLen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">text</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;获取文本分词后位置&quot;&quot;&quot;</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="c1">#         word=word.lower()</span>
+        <span class="n">realLen</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getWordList</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">realLen</span></div>
+    
+    
+<div class="viewcode-block" id="AutoTokenizerPosition.findAll"><a class="viewcode-back" href="../../res/tkitAutoTokenizerPosition.html#tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition.findAll">[文档]</a>    <span class="k">def</span> <span class="nf">findAll</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">text</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        获取词语在文字中的所有开始位置</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">word</span><span class="o">=</span><span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="k">while</span> <span class="n">idx</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">idx</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span></div>
+<div class="viewcode-block" id="AutoTokenizerPosition.fixPosition"><a class="viewcode-back" href="../../res/tkitAutoTokenizerPosition.html#tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition.fixPosition">[文档]</a>    <span class="k">def</span> <span class="nf">fixPosition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">text</span><span class="p">,</span><span class="n">word</span><span class="p">,</span><span class="n">startList</span><span class="o">=</span><span class="p">[]):</span>
+        <span class="sd">&quot;&quot;&quot;自动获取分词后起始位置</span>
+<span class="sd">        自动匹配所有存在的位置</span>
+<span class="sd">        </span>
+<span class="sd">        传入位置可以限制查找的位置</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+<span class="c1">#         print(text,word)</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">word</span><span class="o">=</span><span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">startList</span><span class="p">)</span> <span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">startList</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">start</span> <span class="ow">in</span> <span class="n">startList</span><span class="p">:</span>
+            <span class="n">s_start</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">autoLen</span><span class="p">(</span><span class="n">text</span><span class="p">[:</span><span class="n">start</span><span class="p">])</span>
+        <span class="c1">#     print(&quot;s_start&quot;,s_start)</span>
+            <span class="n">startLen</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">autoLen</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+            <span class="c1"># print(&quot;s_end&quot;, s_start,s_start+startLen)  </span>
+            <span class="k">yield</span> <span class="n">s_start</span><span class="p">,</span><span class="n">s_start</span><span class="o">+</span><span class="n">startLen</span></div>
+<div class="viewcode-block" id="AutoTokenizerPosition.autoTypeWord"><a class="viewcode-back" href="../../res/tkitAutoTokenizerPosition.html#tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition.autoTypeWord">[文档]</a>    <span class="k">def</span> <span class="nf">autoTypeWord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">text</span><span class="p">,</span><span class="n">word</span><span class="p">,</span><span class="n">wType</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">startList</span><span class="o">=</span><span class="p">[]):</span>
+        <span class="k">for</span> <span class="n">s_start</span><span class="p">,</span><span class="n">s_end</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fixPosition</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">word</span><span class="p">,</span><span class="n">startList</span><span class="o">=</span><span class="p">[]):</span>
+<span class="c1">#             print(s_start,s_end)</span>
+<span class="c1">#             WordList=self.getWordList(it[&#39;text&#39;])</span>
+            <span class="k">yield</span> <span class="n">s_start</span><span class="p">,</span><span class="n">s_end</span><span class="p">,</span><span class="n">wType</span></div></div>
+</pre></div>
+
+           </div>
+
+
+           <div id="lv-container" data-id="city" data-uid="MTAyMC80OTg1OS8yNjM1MA==">
+            <script type="4097e126b712b9dab1f8fc00-text/javascript">
+                 (function(d, s) {
+                     var j, e = d.getElementsByTagName(s)[0];
+              
+                     if (typeof LivereTower === 'function') { return; }
+              
+                     j = d.createElement(s);
+                     j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                     j.async = true;
+              
+                     e.parentNode.insertBefore(j, e);
+                 })(document, 'script');
+              </script>
+            <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>        
+
+            
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, Terry Chan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
