@@ -10,6 +10,7 @@ pip install -U Sphinx
 #pip install sphinx_rtd_theme
 #https://sphinx-book-theme.readthedocs.io/en/latest/index.html
 pip install sphinx-book-theme
+pip install sphinx_rtd_theme
 
 
 # https://github.com/lotharschulz/sphinx-pages
