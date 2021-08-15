@@ -20,6 +20,14 @@ tkitAutoTokenizerPosition.bio module
    :undoc-members:
    :show-inheritance:
 
+tkitAutoTokenizerPosition.span module
+-------------------------------------
+
+.. automodule:: tkitAutoTokenizerPosition.span
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 
