@@ -1,5 +1,7 @@
-# 一个创建库的demo
-便于快速创建自己的第三方库
+# tkitAutoTokenizerPosition
+
+
+用于处理AutoTokenizer分词后位置修正，可用于BIO序列问题。
 
 ## 快速上传操作
 可以自动查找依赖，然后上传

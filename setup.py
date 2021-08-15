@@ -28,9 +28,9 @@ def read_requirements(filename):
 
 long_description=read_file("README.md")
 setup(
-    name='tkitDemo', #修改包名字-
+    name='tkitAutoTokenizerPosition', #修改包名字-
     version='0.0.0.2                                 ',
-    description='Terry toolkit tkitDemo',
+    description='Terry toolkit tkitAutoTokenizerPosition',
     author='Terry Chan',
     author_email='napoler2008@gmail.com',
     url='http://www.terrychan.org/python_libs_demo/',
@@ -42,7 +42,7 @@ setup(
 
 
     # ],
-    packages=['Demo'])
+    packages=['tkitAutoTokenizerPosition'])
 
 """
 pip freeze > requirements.txt
