@@ -6,7 +6,11 @@ class AutoTokenizerPosition:
     
     起始位置
     tokenizer = BertTokenizer.from_pretrained("clue/albert_chinese_tiny")
+    tokenizer = BertTokenizer.from_pretrained("bert-base-chinese")
     使用这个可以减少不必要的麻烦
+    
+    
+    
     """
     def __init__(self,tokenizer):
         self.tokenizer=tokenizer
@@ -22,8 +26,10 @@ class AutoTokenizerPosition:
         """获取文本分词后位置"""
         text=text.lower()
 #         word=word.lower()
-        realLen=self.getWordList(text)
+        realLen=len(self.getWordList(text))
         return realLen
+    
+    
     def findAll(self,text, word):
         """
         获取词语在文字中的所有开始位置
@@ -46,11 +52,10 @@ class AutoTokenizerPosition:
         if len(startList) ==0:
             startList=self.findAll(text, word)
         for start in startList:
-
             s_start=self.autoLen(text[:start])
         #     print("s_start",s_start)
             startLen=self.autoLen(word)
-        #     print("s_end",s_start+startLen)  
+            # print("s_end", s_start,s_start+startLen)  
             yield s_start,s_start+startLen
     def autoTypeWord(self,text,word,wType=None,startList=[]):
         for s_start,s_end in self.fixPosition(text,word,startList=[]):
