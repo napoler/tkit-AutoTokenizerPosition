@@ -105,32 +105,80 @@ tokenizer = BertTokenizer.from_pretrained(“bert-base-chinese”)
 <dl class="py method">
 <dt id="tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition.autoLen">
 <code class="sig-name descname"><span class="pre">autoLen</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tkitAutoTokenizerPosition/AutoTokenizerPosition.html#AutoTokenizerPosition.autoLen"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition.autoLen" title="永久链接至目标">¶</a></dt>
-<dd><p>获取文本分词后位置</p>
+<dd><p>[summary]</p>
+<p>获取文本分词后位置</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition.autoTypeWord">
 <code class="sig-name descname"><span class="pre">autoTypeWord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">startList</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tkitAutoTokenizerPosition/AutoTokenizerPosition.html#AutoTokenizerPosition.autoTypeWord"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition.autoTypeWord" title="永久链接至目标">¶</a></dt>
-<dd></dd></dl>
+<dd><p>[summary]</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p></li>
+<li><p><strong>word</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p></li>
+<li><p><strong>wType</strong> (<em>[</em><em>type</em><em>]</em><em>, </em><em>optional</em>) – [description]. Defaults to None.</p></li>
+<li><p><strong>startList</strong> (<em>list</em><em>, </em><em>optional</em>) – [description]. Defaults to [].</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition.findAll">
 <code class="sig-name descname"><span class="pre">findAll</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tkitAutoTokenizerPosition/AutoTokenizerPosition.html#AutoTokenizerPosition.findAll"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition.findAll" title="永久链接至目标">¶</a></dt>
-<dd><p>获取词语在文字中的所有开始位置</p>
+<dd><p>[summary]</p>
+<p>获取词语在文字中的所有开始位置</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p></li>
+<li><p><strong>word</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p></li>
+</ul>
+</dd>
+<dt class="field-even">生成器</dt>
+<dd class="field-even"><p><em>[type]</em> – [description]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition.fixPosition">
 <code class="sig-name descname"><span class="pre">fixPosition</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">startList</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tkitAutoTokenizerPosition/AutoTokenizerPosition.html#AutoTokenizerPosition.fixPosition"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition.fixPosition" title="永久链接至目标">¶</a></dt>
-<dd><p>自动获取分词后起始位置
+<dd><p>[summary]</p>
+<p>自动获取分词后起始位置
 自动匹配所有存在的位置</p>
 <p>传入位置可以限制查找的位置</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p></li>
+<li><p><strong>word</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p></li>
+<li><p><strong>startList</strong> (<em>list</em><em>, </em><em>optional</em>) – [description]. Defaults to [].</p></li>
+</ul>
+</dd>
+<dt class="field-even">生成器</dt>
+<dd class="field-even"><p><em>[type]</em> – [description]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition.getWordList">
 <code class="sig-name descname"><span class="pre">getWordList</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tkitAutoTokenizerPosition/AutoTokenizerPosition.html#AutoTokenizerPosition.getWordList"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition.getWordList" title="永久链接至目标">¶</a></dt>
-<dd><p>分词列表</p>
+<dd><p>[summary]</p>
+<p>分词列表</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
