@@ -13,7 +13,9 @@ class AutoTokenizerPosition:
     ```
 
     > pip install tkitAutoTokenizerPosition
+    
     # or
+    
     > pip install git+https://github.com/napoler/tkit-AutoTokenizerPosition
 
     ```
