@@ -215,6 +215,25 @@
                {%- block comments %}{% endblock %}
              </div>
            {%- endif%}
+
+
+           <div id="lv-container" data-id="city" data-uid="MTAyMC80OTg1OS8yNjM1MA==">
+            <script type="4097e126b712b9dab1f8fc00-text/javascript">
+                 (function(d, s) {
+                     var j, e = d.getElementsByTagName(s)[0];
+              
+                     if (typeof LivereTower === 'function') { return; }
+              
+                     j = d.createElement(s);
+                     j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                     j.async = true;
+              
+                     e.parentNode.insertBefore(j, e);
+                 })(document, 'script');
+              </script>
+            <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>        
+
+            
           </div>
           {%- endblock %}
           {% include "footer.html" %}
@@ -234,17 +253,7 @@
   {#- Do not conflict with RTD insertion of analytics script #}
   {%- if not READTHEDOCS %}
     {%- if theme_analytics_id %}
-    <!-- Theme Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ theme_analytics_id }}"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', '{{ theme_analytics_id }}', {
-          'anonymize_ip': {{ 'true' if theme_analytics_anonymize_ip|tobool else 'false' }},
-      });
-    </script>
+ 
 
     {%- endif %}
   {%- endif %}
