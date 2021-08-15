@@ -94,6 +94,17 @@
 <span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tokenizer</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;[summary]</span>
+<span class="sd">        </span>
+<span class="sd">        ```</span>
+<span class="sd">        tokenizer = BertTokenizer.from_pretrained(&quot;clue/albert_chinese_tiny&quot;)</span>
+<span class="sd">        tokenizer = BertTokenizer.from_pretrained(&quot;bert-base-chinese&quot;)</span>
+<span class="sd">        ```</span>
+<span class="sd">        使用这个可以减少不必要的麻烦</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            tokenizer ([type]): [description]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span>
         <span class="k">pass</span>
 <div class="viewcode-block" id="AutoTokenizerPosition.getWordList"><a class="viewcode-back" href="../../res/tkitAutoTokenizerPosition.html#tkitAutoTokenizerPosition.AutoTokenizerPosition.AutoTokenizerPosition.getWordList">[文档]</a>    <span class="k">def</span> <span class="nf">getWordList</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">text</span><span class="p">):</span>
