@@ -10,7 +10,6 @@ class autoSpan:
     
     
     """
-    
     def  __init__(self,labelsList=[]) :
         """[summary]
         
@@ -38,13 +37,13 @@ class autoSpan:
             [type]: [description]
         """
 
-    #     maxLen=128
+        #     maxLen=128
         span_label = [0 for i in range(maxLen)]
         span_label = [span_label for i in range(maxLen)]
         span_label = np.array(span_label)
-    #     start = [1, 3, 7]
-    #     end  = [ 2,9, 9]
-    #     label2id = [1,2,4]
+        #     start = [1, 3, 7]
+        #     end  = [ 2,9, 9]
+        #     label2id = [1,2,4]
         start = []
         end  = []
         label2id = []
@@ -61,6 +60,9 @@ class autoSpan:
     
     def autoSpan(self,datas,maxLen=128):
         """[summary]
+        自动构建Span数据集
+        
+        输入格式如下
 
         Args:
             datas ([type]): [description]
