@@ -3,4 +3,5 @@
 # from .config import *
 from .AutoTokenizerPosition import *
 from .bio import autoBIO
+from .span import autoSpan
 

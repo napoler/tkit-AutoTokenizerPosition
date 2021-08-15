@@ -1,5 +1,5 @@
 name='tkitAutoTokenizerPosition'#修改包名字-
-version='0.0.0.1 '
+version='0.0.0.2 '
 description='Terry toolkit tkitAutoTokenizerPosition'
 author='Terry Chan'
 author_email='napoler2008@gmail.com'
