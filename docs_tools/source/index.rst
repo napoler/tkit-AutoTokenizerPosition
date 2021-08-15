@@ -3,8 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-文档
+tkitAutoTokenizerPosition文档
 ======================================
+源码来自于 https://github.com/napoler/tkit-AutoTokenizerPosition
+
+用于处理AutoTokenizer分词后位置修正，可用于BIO序列问题。
+
 
 .. toctree::
    :maxdepth: 2

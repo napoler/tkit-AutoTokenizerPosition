@@ -27,7 +27,7 @@ class autoSpan:
         
         构建span数据
         
-        >data=[{'start': 65, 'end': 70, 'type': '疾病'}]
+        > data=[{'start': 65, 'end': 70, 'type': '疾病'}]
 
         Args:
             data ([type]): [description]
