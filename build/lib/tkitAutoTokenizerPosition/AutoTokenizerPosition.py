@@ -8,15 +8,7 @@ class AutoTokenizerPosition:
     tokenizer = BertTokenizer.from_pretrained("clue/albert_chinese_tiny")
     tokenizer = BertTokenizer.from_pretrained("bert-base-chinese")
     使用这个可以减少不必要的麻烦
-    ## 安装
-
-    ```
-
-    > pip install tkitAutoTokenizerPosition
-    # or
-    > pip install git+https://github.com/napoler/tkit-AutoTokenizerPosition
-
-    ```
+    
     
     
     """

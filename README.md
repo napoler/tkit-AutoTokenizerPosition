@@ -3,6 +3,17 @@
 
 用于处理AutoTokenizer分词后位置修正，可用于BIO序列问题。
 
+
+## 安装
+
+```
+
+pip install tkitAutoTokenizerPosition
+# or
+pip install git+https://github.com/napoler/tkit-AutoTokenizerPosition
+
+```
+
 ## 快速上传操作
 可以自动查找依赖，然后上传
 ```
@@ -10,7 +21,24 @@ sh upload.sh
 ```
 
 文档查看
-https://www.terrychan.org/python_libs_demo/
+https://www.terrychan.org/tkit-AutoTokenizerPosition/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 更多开发说明参考这里 https://python-packaging-zh.readthedocs.io/zh_CN/latest/minimal.html
