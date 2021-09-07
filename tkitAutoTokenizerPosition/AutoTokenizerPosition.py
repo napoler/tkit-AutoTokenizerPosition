@@ -9,15 +9,12 @@ class AutoTokenizerPosition:
     tokenizer = BertTokenizer.from_pretrained("bert-base-chinese")
     使用这个可以减少不必要的麻烦
     ## 安装
-
     ```
-
     > pip install tkitAutoTokenizerPosition
     
     # or
     
     > pip install git+https://github.com/napoler/tkit-AutoTokenizerPosition
-
     ```
     
     
@@ -30,22 +27,31 @@ class AutoTokenizerPosition:
         tokenizer = BertTokenizer.from_pretrained("bert-base-chinese")
         ```
         使用这个可以减少不必要的麻烦
-
         Args:
             tokenizer ([type]): [description]
         """
         self.tokenizer=tokenizer
         pass
-    def getWordList(self,text):
+    def pretreatment(self,text):
         """[summary]
         
-        分词列表
-
+        预处理文字
         Args:
             text ([type]): [description]
         """
         text=text.lower()
-        text=text.replace(" ",self.tokenizer.pad_token)
+        text=text.replace("\t",tokenizer.pad_token).replace(" ",tokenizer.pad_token)
+        text=text.replace("\n",tokenizer.sep_token).replace("\r",tokenizer.sep_token)
+        return text
+    def getWordList(self,text):
+        """[summary]
+        
+        分词列表
+        Args:
+            text ([type]): [description]
+        """
+        text=self.pretreatment(text)
+#         text=text.replace(" ",self.tokenizer.pad_token)
         # print(text)
 #         word=word.lower()
         return self.tokenizer.tokenize(text)
@@ -53,30 +59,23 @@ class AutoTokenizerPosition:
         """[summary]
         
         获取文本分词后位置
-
         Args:
             text ([type]): [description]
         """
-        text=text.lower()
-#         word=word.lower()
         realLen=len(self.getWordList(text))
         return realLen
     
     
-    def findAll(self,text, word):
+    def findAll(self,or_text, word):
         """[summary]
         
         获取词语在文字中的所有开始位置
-
         Args:
             text ([type]): [description]
             word ([type]): [description]
-
         Yields:
             [type]: [description]
         """
-        text=text.lower()
-        word=word.lower()
         idx = text.find(word)
         while idx != -1:
             yield idx
@@ -88,29 +87,28 @@ class AutoTokenizerPosition:
         自动匹配所有存在的位置
         
         传入位置可以限制查找的位置
-
         Args:
             text ([type]): [description]
             word ([type]): [description]
             startList (list, optional): [description]. Defaults to [].
-
         Yields:
             [type]: [description]
         """
-#         print(text,word)
-        text=text.lower()
-        word=word.lower()
+
+        #获取起始位置
         if len(startList) ==0:
             startList=self.findAll(text, word)
         for start in startList:
+            #获取开始
+            print(text[:start])
+            print(text[:start+len(word)])
             s_start=self.autoLen(text[:start])
         #     print("s_start",s_start)
-            startLen=self.autoLen(word)
+            end=self.autoLen(text[:start+len(word)])
             # print("s_end", s_start,s_start+startLen)  
-            yield s_start,s_start+startLen
+            yield s_start,end
     def autoTypeWord(self,text,word,wType=None,startList=[]):
         """[summary]
-
         Args:
             text ([type]): [description]
             word ([type]): [description]
