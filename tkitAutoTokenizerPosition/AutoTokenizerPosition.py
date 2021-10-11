@@ -100,8 +100,8 @@ class AutoTokenizerPosition:
             startList=self.findAll(text, word)
         for start in startList:
             #获取开始
-            print(text[:start])
-            print(text[:start+len(word)])
+            #print(text[:start])
+            #print(text[:start+len(word)])
             s_start=self.autoLen(text[:start])
         #     print("s_start",s_start)
             end=self.autoLen(text[:start+len(word)])
@@ -115,7 +115,7 @@ class AutoTokenizerPosition:
             wType ([type], optional): [description]. Defaults to None.
             startList (list, optional): [description]. Defaults to [].
         """
-        for s_start,s_end in self.fixPosition(text,word,startList=[]):
+        for s_start,s_end in self.fixPosition(text,word,startList):
 #             print(s_start,s_end)
 #             WordList=self.getWordList(it['text'])
             yield s_start,s_end,wType
