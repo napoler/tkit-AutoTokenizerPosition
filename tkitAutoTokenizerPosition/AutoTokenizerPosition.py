@@ -90,14 +90,14 @@ class AutoTokenizerPosition:
         return text
     def getWordList(self,text):
         """[summary]
-        
+
         分词列表
 
         Args:
-            text ([type]): [description]
+        text ([type]): [description]
         """
-       text=self.clear(text)
-       return self.tokenizer.tokenize(text)
+        text=self.clear(text)
+        return self.tokenizer.tokenize(text)
     def getText(self,wordList):
         for i,w in enumerate(wordList):
             wordList[i]=w.replace("##", "")
