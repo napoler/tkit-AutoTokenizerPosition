@@ -74,12 +74,12 @@ class AutoTokenizerPosition:
         x = re.sub(r"&nbsp", "", x)
         return x
     def clear(self,text):
-         """[summary]
-        
+        """[summary]
+
         清理文本中文问题
 
         Args:
-            text ([type]): [description]
+        text ([type]): [description]
         """
         text=text.lower()
         # 中文标点转换英文
@@ -97,7 +97,7 @@ class AutoTokenizerPosition:
             text ([type]): [description]
         """
        text=self.clear(text)
-        return self.tokenizer.tokenize(text)
+       return self.tokenizer.tokenize(text)
     def getText(self,wordList):
         for i,w in enumerate(wordList):
             wordList[i]=w.replace("##", "")
