@@ -73,10 +73,10 @@ class AutoTokenizerPosition:
         x = re.sub(r'[—]', '-', x)
         x = re.sub(r"&nbsp", "", x)
         return x
-    def getWordList(self,text):
-        """[summary]
+    def clear(self,text):
+         """[summary]
         
-        分词列表
+        清理文本中文问题
 
         Args:
             text ([type]): [description]
@@ -87,7 +87,16 @@ class AutoTokenizerPosition:
         text=self.filterPunctuation(text)
         text=text.replace("\t",self.tokenizer.pad_token).replace(" ",self.tokenizer.pad_token)
         text=text.replace("\n",self.tokenizer.sep_token).replace("\r",self.tokenizer.sep_token)
-#         word=word.lower()
+        return text
+    def getWordList(self,text):
+        """[summary]
+        
+        分词列表
+
+        Args:
+            text ([type]): [description]
+        """
+       text=self.clear(text)
         return self.tokenizer.tokenize(text)
     def getText(self,wordList):
         for i,w in enumerate(wordList):
