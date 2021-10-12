@@ -18,13 +18,13 @@ pip install sphinx-autobuild
 #markdown基础支持
 #recommonmark的PyPi说明：https://pypi.org/project/sphinx-markdown-tables/
 pip install recommonmark
-
+# pip install torch
 
 rm -rf ../docs 
 #
 #清理之前生成的文档
 rm -rf ./source/res/
-#扫描目录 tkitAutoTokenizerPosition
+#扫描目录 Demo
 sphinx-apidoc -o ./source/res ../tkitAutoTokenizerPosition
 
 #编译成为html
@@ -36,9 +36,14 @@ sphinx-build -b html ./source ../docs
 
 cp ./.nojekyll ../docs
 
-# 推送命令
-cd ../
-git add .
-git commit -m "auto更新文档"
-git pull
-git push
+
+pwd
+
+ls ../docs
+
+# # 推送命令
+# cd ../
+# git add .
+# git commit -m "auto更新文档"
+# git pull
+# git push
