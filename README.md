@@ -22,7 +22,7 @@ https://github.com/napoler/tkit-AutoTokenizerPosition/blob/master/demo.ipynb
 
 
 文档查看
-https://www.terrychan.org/tkit-AutoTokenizerPosition/
+https://docs.terrychan.org/tkit-AutoTokenizerPosition/
 
 
 
