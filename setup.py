@@ -13,7 +13,7 @@ version='0.0.0.6'+str(time.time())[:8]
 description='Terry toolkit tkitAttNLocal,'
 author='Terry Chan'
 author_email='napoler2008@gmail.com'
-url='https://www.terrychan.org/'
+url='https://docs.terrychan.org/tkit-AutoTokenizerPosition/index.html'
 
 copyright = '2021, Terry Chan'
 language = 'zh_cn'
@@ -69,7 +69,7 @@ setup(
         # 'transformers>=4.10.3',
 
     ],
-    packages=['tkitAttNLocal'],
+    packages=['tkitAutoTokenizerPosition'],
     include_package_data=True,  # 打包包含静态文件标识
     )
 
