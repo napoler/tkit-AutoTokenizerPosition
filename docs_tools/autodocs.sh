@@ -18,7 +18,7 @@ pip install sphinx-autobuild
 #markdown基础支持
 #recommonmark的PyPi说明：https://pypi.org/project/sphinx-markdown-tables/
 pip install recommonmark
-pip install regex
+pip install regex numpy tqdm
 
 rm -rf ../docs 
 #
