@@ -10,7 +10,7 @@ import time
 
 name='tkitAutoTokenizerPosition'#修改包名字-
 version='0.0.0.6'+str(time.time())[:8]
-description='Terry toolkit tkitAttNLocal,'
+description='Terry toolkit tkitAutoTokenizerPosition,'
 author='Terry Chan'
 author_email='napoler2008@gmail.com'
 url='https://docs.terrychan.org/tkit-AutoTokenizerPosition/index.html'
