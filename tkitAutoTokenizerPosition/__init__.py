@@ -4,4 +4,5 @@
 from .AutoTokenizerPosition import *
 from .bio import autoBIO
 from .span import autoSpan
+from .AutoPos import AutoPos
 
