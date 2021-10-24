@@ -66,7 +66,7 @@ setup(
         'tqdm==4.62.2',
         'numpy==1.21.2',
         'regex==2021.10.8',
-        # 'transformers>=4.10.3',
+        'pkuseg>=0.0.25',
 
     ],
     packages=['tkitAutoTokenizerPosition'],
