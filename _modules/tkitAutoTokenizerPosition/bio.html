@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tkitAutoTokenizerPosition.bio &mdash; tkitAutoTokenizerPosition 0.0.0.4 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> tkitAutoTokenizerPosition
+          </a>
+              <div class="version">
+                0.0.0.4
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div>
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Main">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../res/modules.html">tkitAutoTokenizerPosition</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" aria-label="Top" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">tkitAutoTokenizerPosition</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+<div role="navigation" aria-label="Breadcrumbs">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">模块代码</a> &raquo;</li>
+      <li>tkitAutoTokenizerPosition.bio</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>tkitAutoTokenizerPosition.bio 源代码</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">构建BIO结构数据集</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="autoBIO"><a class="viewcode-back" href="../../res/tkitAutoTokenizerPosition.html#tkitAutoTokenizerPosition.bio.autoBIO">[文档]</a><span class="k">class</span> <span class="nc">autoBIO</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;[summary]</span>
+<span class="sd">    </span>
+<span class="sd">    用于构建bio结构数据集</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        
+        
+        
+        <span class="k">pass</span>
+<div class="viewcode-block" id="autoBIO.bulid"><a class="viewcode-back" href="../../res/tkitAutoTokenizerPosition.html#tkitAutoTokenizerPosition.bio.autoBIO.bulid">[文档]</a>    <span class="k">def</span> <span class="nf">bulid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">it</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;[summary]</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        it={&#39;text&#39;: &#39;急性胰腺炎@有研究显示，进行早期 ERCP （24 小时内）可以降低梗阻性胆总管结石患者的并发症发生率和死亡率； 但是，对于无胆总管梗阻的胆汁性急性胰腺炎患者，不需要进行早期 ERCP。&#39;, &#39;wordList&#39;: [&#39;急&#39;, &#39;性&#39;, &#39;胰&#39;, &#39;腺&#39;, &#39;炎&#39;, &#39;@&#39;, &#39;有&#39;, &#39;研&#39;, &#39;究&#39;, &#39;显&#39;, &#39;示&#39;, &#39;，&#39;, &#39;进&#39;, &#39;行&#39;, &#39;早&#39;, &#39;期&#39;, &#39;[PAD]&#39;, &#39;er&#39;, &#39;##cp&#39;, &#39;[PAD]&#39;, &#39;（&#39;, &#39;24&#39;, &#39;[PAD]&#39;, &#39;小&#39;, &#39;时&#39;, &#39;内&#39;, &#39;）&#39;, &#39;可&#39;, &#39;以&#39;, &#39;降&#39;, &#39;低&#39;, &#39;梗&#39;, &#39;阻&#39;, &#39;性&#39;, &#39;胆&#39;, &#39;总&#39;, &#39;管&#39;, &#39;结&#39;, &#39;石&#39;, &#39;患&#39;, &#39;者&#39;, &#39;的&#39;, &#39;并&#39;, &#39;发&#39;, &#39;症&#39;, &#39;发&#39;, &#39;生&#39;, &#39;率&#39;, &#39;和&#39;, &#39;死&#39;, &#39;亡&#39;, &#39;率&#39;, &#39;；&#39;, &#39;[PAD]&#39;, &#39;但&#39;, &#39;是&#39;, &#39;，&#39;, &#39;对&#39;, &#39;于&#39;, &#39;无&#39;, &#39;胆&#39;, &#39;总&#39;, &#39;管&#39;, &#39;梗&#39;, &#39;阻&#39;, &#39;的&#39;, &#39;胆&#39;, &#39;汁&#39;, &#39;性&#39;, &#39;急&#39;, &#39;性&#39;, &#39;胰&#39;, &#39;腺&#39;, &#39;炎&#39;, &#39;患&#39;, &#39;者&#39;, &#39;，&#39;, &#39;不&#39;, &#39;需&#39;, &#39;要&#39;, &#39;进&#39;, &#39;行&#39;, &#39;早&#39;, &#39;期&#39;, &#39;[PAD]&#39;, &#39;er&#39;, &#39;##cp&#39;, &#39;。&#39;], &#39;tag&#39;: [{&#39;start&#39;: 0, &#39;end&#39;: 5, &#39;type&#39;: &#39;疾病&#39;}, {&#39;start&#39;: 69, &#39;end&#39;: 74, &#39;type&#39;: &#39;疾病&#39;}, {&#39;start&#39;: 17, &#39;end&#39;: 19, &#39;type&#39;: &#39;检查&#39;}, {&#39;start&#39;: 85, &#39;end&#39;: 87, &#39;type&#39;: &#39;检查&#39;},</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        </span>
+<span class="sd">        返回格式如下</span>
+<span class="sd">        </span>
+<span class="sd">        {&#39;text&#39;: &#39;急性胰腺炎@有研究显示，进行早期 ERCP （24 小时内）可以降低梗阻性胆总管结石患者的并发症发生率和死亡率； 但是，对于无胆总管梗阻的胆汁性急性胰腺炎患者，不需要进行早期 ERCP。&#39;, &#39;wordList&#39;: [&#39;急&#39;, &#39;性&#39;, &#39;胰&#39;, &#39;腺&#39;, &#39;炎&#39;, &#39;@&#39;, &#39;有&#39;, &#39;研&#39;, &#39;究&#39;, &#39;显&#39;, &#39;示&#39;, &#39;，&#39;, &#39;进&#39;, &#39;行&#39;, &#39;早&#39;, &#39;期&#39;, &#39;[PAD]&#39;, &#39;er&#39;, &#39;##cp&#39;, &#39;[PAD]&#39;, &#39;（&#39;, &#39;24&#39;, &#39;[PAD]&#39;, &#39;小&#39;, &#39;时&#39;, &#39;内&#39;, &#39;）&#39;, &#39;可&#39;, &#39;以&#39;, &#39;降&#39;, &#39;低&#39;, &#39;梗&#39;, &#39;阻&#39;, &#39;性&#39;, &#39;胆&#39;, &#39;总&#39;, &#39;管&#39;, &#39;结&#39;, &#39;石&#39;, &#39;患&#39;, &#39;者&#39;, &#39;的&#39;, &#39;并&#39;, &#39;发&#39;, &#39;症&#39;, &#39;发&#39;, &#39;生&#39;, &#39;率&#39;, &#39;和&#39;, &#39;死&#39;, &#39;亡&#39;, &#39;率&#39;, &#39;；&#39;, &#39;[PAD]&#39;, &#39;但&#39;, &#39;是&#39;, &#39;，&#39;, &#39;对&#39;, &#39;于&#39;, &#39;无&#39;, &#39;胆&#39;, &#39;总&#39;, &#39;管&#39;, &#39;梗&#39;, &#39;阻&#39;, &#39;的&#39;, &#39;胆&#39;, &#39;汁&#39;, &#39;性&#39;, &#39;急&#39;, &#39;性&#39;, &#39;胰&#39;, &#39;腺&#39;, &#39;炎&#39;, &#39;患&#39;, &#39;者&#39;, &#39;，&#39;, &#39;不&#39;, &#39;需&#39;, &#39;要&#39;, &#39;进&#39;, &#39;行&#39;, &#39;早&#39;, &#39;期&#39;, &#39;[PAD]&#39;, &#39;er&#39;, &#39;##cp&#39;, &#39;。&#39;], &#39;tag&#39;: [{&#39;start&#39;: 0, &#39;end&#39;: 5, &#39;type&#39;: &#39;疾病&#39;}, {&#39;start&#39;: 69, &#39;end&#39;: 74, &#39;type&#39;: &#39;疾病&#39;}, {&#39;start&#39;: 17, &#39;end&#39;: 19, &#39;type&#39;: &#39;检查&#39;}, {&#39;start&#39;: 85, &#39;end&#39;: 87, &#39;type&#39;: &#39;检查&#39;}], &#39;data&#39;: {&#39;text&#39;: &#39;急性胰腺炎@有研究显示，进行早期 ERCP （24 小时内）可以降低梗阻性胆总管结石患者的并发症发生率和死亡率； 但是，对于无胆总管梗阻的胆汁性急性胰腺炎患者，不需要进行早期 ERCP。&#39;, &#39;spo_list&#39;: [{&#39;Combined&#39;: False, &#39;predicate&#39;: &#39;影像学检查&#39;, &#39;subject&#39;: &#39;急性胰腺炎&#39;, &#39;subject_type&#39;: &#39;疾病&#39;, &#39;object&#39;: {&#39;@value&#39;: &#39;ERCP&#39;}, &#39;object_type&#39;: {&#39;@value&#39;: &#39;检查&#39;}}]}, &#39;tagList&#39;: [&#39;B-疾病&#39;, &#39;M-疾病&#39;, &#39;M-疾病&#39;, &#39;M-疾病&#39;, &#39;E-疾病&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;B-检查&#39;, &#39;E-检查&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;B-疾病&#39;, &#39;M-疾病&#39;, &#39;M-疾病&#39;, &#39;M-疾病&#39;, &#39;E-疾病&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;B-检查&#39;, &#39;E-检查&#39;, &#39;O&#39;]}</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># print(it)</span>
+        <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;O&quot;</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">it</span><span class="p">[</span><span class="s2">&quot;wordList&quot;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">w</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">it</span><span class="p">[</span><span class="s2">&quot;wordList&quot;</span><span class="p">],</span><span class="n">tags</span><span class="p">):</span>
+            <span class="c1"># print(w,t)</span>
+            
+            <span class="k">for</span> <span class="n">tse</span> <span class="ow">in</span> <span class="n">it</span><span class="p">[</span><span class="s1">&#39;tag&#39;</span><span class="p">]:</span>
+                <span class="c1"># print(tse)</span>
+                
+                <span class="k">for</span> <span class="n">rid</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">],</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]):</span>
+                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">it</span><span class="p">[</span><span class="s2">&quot;wordList&quot;</span><span class="p">])</span><span class="o">&gt;</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">it</span><span class="p">[</span><span class="s2">&quot;wordList&quot;</span><span class="p">])</span><span class="o">&gt;</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]:</span>
+                        <span class="k">if</span> <span class="n">rid</span><span class="o">==</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]:</span>
+                            <span class="n">tags</span><span class="p">[</span><span class="n">rid</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;B-&quot;</span><span class="o">+</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
+                        <span class="k">elif</span> <span class="n">rid</span> <span class="o">==</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                            <span class="k">try</span><span class="p">:</span>
+                                <span class="n">tags</span><span class="p">[</span><span class="n">rid</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;E-&quot;</span><span class="o">+</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
+                            <span class="k">except</span><span class="p">:</span>
+                                <span class="c1"># print(len(tags),tse[&#39;start&#39;],tse[&#39;end&#39;])</span>
+                                <span class="k">pass</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">tags</span><span class="p">[</span><span class="n">rid</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;M-&quot;</span><span class="o">+</span><span class="n">tse</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
+            
+            
+            <span class="c1"># for w,tag in zip(it[&quot;wordList&quot;],tags):</span>
+            <span class="c1">#     print(w,tag)</span>
+            
+            <span class="n">it</span><span class="p">[</span><span class="s1">&#39;tagList&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">tags</span>
+            
+            <span class="k">return</span> <span class="n">it</span></div></div>
+</pre></div>
+
+           </div>
+
+
+           <div id="lv-container" data-id="city" data-uid="MTAyMC80OTg1OS8yNjM1MA==">
+            <script type="4097e126b712b9dab1f8fc00-text/javascript">
+                 (function(d, s) {
+                     var j, e = d.getElementsByTagName(s)[0];
+              
+                     if (typeof LivereTower === 'function') { return; }
+              
+                     j = d.createElement(s);
+                     j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                     j.async = true;
+              
+                     e.parentNode.insertBefore(j, e);
+                 })(document, 'script');
+              </script>
+            <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>        
+
+            
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, Terry Chan.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
